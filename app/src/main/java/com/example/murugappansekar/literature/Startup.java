@@ -21,8 +21,25 @@ public class Startup extends AppCompatActivity {
         bHost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Startup.this,NetworkInfo.getIPAddress(true), Toast.LENGTH_SHORT).show();
+                Intent I=new Intent(Startup.this,HostGame.class);
+                startActivity(I);
             }
         });
+        bJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent I=new Intent(Startup.this,JoinGame.class);
+                startActivity(I);
+            }
+        });
+        bDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent I=new Intent(Startup.this,DetailsPage.class);
+                startActivity(I);
+            }
+        });
+
+
     }
 }

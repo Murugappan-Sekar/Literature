@@ -126,4 +126,18 @@ public class NetworkInfo {
         return "";
     }
 
+    public static String getServerIP(){
+        String myIp=getIPAddress(true);
+        int pos=0;
+        for(int i=0;i<myIp.length();i++){
+            if(myIp.charAt(i)=='.')
+                pos=i;
+        }
+        if(pos==0)
+            return "-1";
+        myIp=myIp.substring(0,pos);
+        myIp+=".1";
+        return myIp;
+    }
+
 }
